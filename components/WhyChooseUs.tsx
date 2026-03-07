@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import { ShieldCheck, Droplets, Clock, Zap } from 'lucide-react';
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={{ delay: index * 0.1, duration: 0.47 }}
               viewport={{ once: true }}
               className="group p-10 rounded-[2.5rem] bg-card/30 border border-primary/5 hover:border-primary/30 transition-all duration-500 text-center relative overflow-hidden"
             >

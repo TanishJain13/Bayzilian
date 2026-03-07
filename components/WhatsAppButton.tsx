@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
@@ -39,25 +39,25 @@ export default function WhatsAppButton() {
         }}
         transition={{
           y: {
-            duration: 3,
+            duration: 2.34,
             repeat: Infinity,
             ease: "easeInOut"
           },
-          scale: { duration: 0.5 },
-          opacity: { duration: 0.5 }
+          scale: { duration: 0.39 },
+          opacity: { duration: 0.39 }
         }}
         whileHover={{ scale: 1.1, y: 0 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative p-4 rounded-full glass-effect border border-primary/20 text-primary shadow-2xl hover:border-primary/50 transition-all duration-300"
+        className="group relative p-4 rounded-full glass-effect border border-green-500/20 text-green-500 shadow-2xl hover:border-green-500/50 transition-all duration-300"
         aria-label="Chat on WhatsApp"
       >
         {/* Glow effect */}
-        <div className="absolute inset-0 rounded-full luxury-gradient opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-500" />
+        <div className="absolute inset-0 rounded-full bg-green-500/10 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
 
-        <MessageCircle size={28} className="relative z-10" />
+        <MessageCircle size={28} className="relative z-10 text-green-500" />
 
         {/* Outer pulse */}
-        <div className="absolute inset-0 rounded-full border border-primary/30 animate-pulse opacity-20" />
+        <div className="absolute inset-0 rounded-full border border-green-500/30 animate-pulse opacity-20" />
       </motion.a>
     </div>
   );

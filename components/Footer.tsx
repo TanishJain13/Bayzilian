@@ -1,7 +1,7 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Twitter, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Instagram, Mail, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 const links = {
@@ -13,7 +13,6 @@ const links = {
   ],
   Company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Distributors', href: '/distributor' },
     { label: 'Transformations', href: '/transformations' },
     { label: 'Contact', href: '/contact' },
   ],
@@ -24,15 +23,13 @@ const links = {
 };
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://www.instagram.com/bayzilianprofessionalofficial/', label: 'Instagram' },
+  { icon: Mail, href: 'mailto:info@bayzilian.com', label: 'Email' },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-background relative pt-32 pb-16 overflow-hidden border-t border-primary/10">
+    <footer className="bg-[#f2eadc] relative pt-32 pb-16 overflow-hidden border-t border-primary/20">
       {/* Decorative background element */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] luxury-gradient opacity-30"></div>
 
@@ -52,6 +49,8 @@ export default function Footer() {
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -4 }}
                   className="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-500 hover:border-primary"
                 >
@@ -89,7 +88,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4 text-[10px] text-foreground/30 uppercase tracking-[0.2em] font-bold">
-            <span>© 2026 Bayzilian</span>
+            <span>Â© 2026 Bayzilian</span>
             <span className="w-1 h-1 rounded-full bg-primary/20"></span>
             <span>All Rights Reserved</span>
           </div>

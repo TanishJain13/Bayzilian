@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -23,7 +23,7 @@ const testimonials = [
         id: 3,
         name: 'Isabella Chen',
         role: 'Salon Owner',
-        content: "Our clients specifically ask for the 'Bayzilian Gloss' now. It has become our most requested high-end treatment. The support we get as a distributor is also excellent.",
+        content: "Our clients specifically ask for the 'Bayzilian Gloss' now. It has become our most requested high-end treatment. The support we get is also excellent.",
         rating: 5
     }
 ];
@@ -59,7 +59,7 @@ export default function TestimonialSlider() {
                             initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
                             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                             exit={{ opacity: 0, y: -40, filter: 'blur(10px)' }}
-                            transition={{ duration: 0.8, cubicBezier: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.62, cubicBezier: [0.16, 1, 0.3, 1] }}
                             className="px-6 sm:px-12"
                         >
                             <div className="flex justify-center gap-1 mb-8">

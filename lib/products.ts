@@ -1,4 +1,4 @@
-export interface Product {
+﻿export interface Product {
     id: number;
     slug: string;
     name: string;
@@ -16,14 +16,14 @@ export const products: Product[] = [
         slug: 'nanoplastia-1000ml',
         name: 'Bayzilian Nanoplastia',
         volume: '1000ml',
-        price: '₹21,999',
-        image: '/product-1.jpg',
+        price: '21,999',
+        image: '/Nanoplastia.png',
         badge: 'Bestseller',
         features: [
             'One Step Hair Rebuilder',
             '100% Formaldehyde Free',
             'Up to 100% Straight Results',
-            '65–70 Wash Durability',
+            '65â€“70 Wash Durability',
             'No Color Fading'
         ],
         description: 'Our flagship Nanoplastia treatment is an innovative hair restoration system that deeply rebuilds the hair fiber. Formulated with organic acids and acai berry extracts, it provides long-lasting straightness, incredible shine, and silkiness without any harsh chemicals.',
@@ -31,10 +31,10 @@ export const products: Product[] = [
     {
         id: 2,
         slug: 'pro-botos-1000ml',
-        name: 'Bayzilian Pro Botos',
+        name: 'Bayzilian Pro Botos (Botox Treatment)',
         volume: '1000ml',
-        price: '₹24,999',
-        image: '/product-2.jpg',
+        price: '24,999',
+        image: '/Pro Botos.png',
         badge: 'Premium',
         features: [
             'Deep Internal Repair',
@@ -50,8 +50,8 @@ export const products: Product[] = [
         slug: 'serum-illuminator',
         name: 'Serum Illuminator',
         volume: '200ml',
-        price: '₹1,999',
-        image: '/product-3.jpg',
+        price: '1,999',
+        image: '/Serum.png',
         badge: 'Protector',
         features: [
             'Heat Protection',
@@ -67,8 +67,8 @@ export const products: Product[] = [
         slug: 'bayzilian-shampoo',
         name: 'Bayzilian Shampoo',
         volume: '1000ml / 300ml',
-        price: '₹2,999 / ₹1,199',
-        image: '/product-4.jpg',
+        price: '2,999 / 1,199',
+        image: '/Shampoo.png',
         badge: 'Essential',
         features: [
             'Sulfate Free',
@@ -84,8 +84,8 @@ export const products: Product[] = [
         slug: 'bayzilian-conditioner',
         name: 'Bayzilian Conditioner',
         volume: '1000ml / 300ml',
-        price: '₹2,999 / ₹1,199',
-        image: '/product-5.jpg',
+        price: '2,999 / 1,199',
+        image: '/Conditioner.png',
         badge: 'Maintenance',
         features: [
             'Maintains Nanoplastia Results',
@@ -101,8 +101,8 @@ export const products: Product[] = [
         slug: 'golden-hair-spa',
         name: 'Golden Hair Spa',
         volume: '500gm',
-        price: '₹2,099',
-        image: '/product-6.jpg',
+        price: '2,099',
+        image: '/Golden Hair Spa.png',
         badge: 'Luxury',
         features: [
             'Luxury Nourishing Treatment',
@@ -111,15 +111,15 @@ export const products: Product[] = [
             'Rich Hydration',
             'Weekly Treatment'
         ],
-        description: 'An ultra-nourishing hair spa mask infused with precious oils and proteins. It provides a deep surge of moisture to dry, damaged hair, restoring its natural shine and softness.',
+        description: 'A Golden Hair Spa typically refers to a luxurious hair treatment that focuses on rejuvenating and nourishing the hair and scalp, often using natural ingredients like argan oil, and other essential oils. It often includes steps like steaming, scalp massage, shampooing, and applying hair masks. The goal is to improve hair health, reduce damage, and restore shine.',
     },
     {
         id: 7,
         slug: 'argan-oil',
-        name: 'Argan Oil',
+        name: 'Moroccan Argan Oil',
         volume: '50ml',
-        price: '₹1,499',
-        image: '/product-7.jpg',
+        price: '1,599',
+        image: '/Argan oil .png',
         badge: 'Classic',
         features: [
             'Pure Argan Extract',
@@ -128,15 +128,15 @@ export const products: Product[] = [
             'UV Protection',
             'Lightweight Formula'
         ],
-        description: 'Premium Moroccan Argan Oil that absorbs instantly into the hair without leaving any greasy residue. It nourishes, smooths, and protects hair from environmental stressors.',
+        description: 'Bayzilian Argan oil is known for its use in hair, skin & Nails products. Beyond cosmetics, it offers health benefits such as immune system support, cholesterol control, potential cancer-fighting properties, anti-aging effects, and wound healing. Research links argan oil to lower LDL cholesterol and better heart health.',
     },
     {
         id: 8,
         slug: 'clarifying-shampoo',
         name: 'Clarifying Shampoo',
         volume: '1000ml',
-        price: '₹1,599',
-        image: '/product-8.jpg',
+        price: '1,999',
+        image: '/Clarifying Shampoo .png',
         badge: 'Technical',
         features: [
             'Deep Cleansing',

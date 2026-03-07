@@ -92,14 +92,23 @@ export default function ProductDetailPage() {
                         </div>
 
                         <div className="pt-10 border-t border-primary/10 flex flex-col sm:flex-row items-center justify-between gap-8">
-                            <div>
+                            <div className="space-y-2">
                                 <p className="text-[10px] uppercase tracking-widest text-primary/40 mb-1">Suggested Salon Price</p>
-                                <p className="text-4xl font-serif font-bold italic text-foreground">{product.price}</p>
+                                {product.price.split(' / ').map((price, idx) => {
+                                    const volumes = product.volume.split(' / ');
+                                    const vol = volumes[idx] || product.volume;
+                                    return (
+                                        <div key={idx} className="flex items-baseline gap-3">
+                                            <span className="text-xl text-foreground/50 font-medium">{vol}:</span>
+                                            <p className="text-4xl font-serif font-bold italic text-foreground">₹{price}</p>
+                                        </div>
+                                    );
+                                })}
                             </div>
 
-                            <Link href="/distributor" className="w-full sm:w-auto">
+                            <Link href="/contact" className="w-full sm:w-auto">
                                 <button className="w-full px-12 py-5 rounded-full luxury-gradient text-primary-foreground font-bold tracking-widest uppercase text-sm shadow-2xl hover:scale-105 transition-all">
-                                    Distributor Inquiry
+                                    Contact Us
                                 </button>
                             </Link>
                         </div>

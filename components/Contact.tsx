@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
@@ -12,6 +12,8 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -20,11 +22,32 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setSubmitting(true);
+    setError(false);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xvggebrp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -40,7 +63,7 @@ export default function Contact() {
             Elite <span className="text-primary italic">Support</span>
           </h2>
           <p className="text-xl text-foreground/50 font-light max-w-2xl mx-auto">
-            Whether you're a boutique salon owner or a large distributor, our team is ready to assist your journey to excellence.
+            Whether you're a boutique salon owner or a large salon chain, our team is ready to assist your journey to excellence.
           </p>
         </div>
 
@@ -135,10 +158,15 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-6 rounded-full luxury-gradient text-primary-foreground font-bold tracking-widest uppercase text-sm shadow-xl flex items-center justify-center gap-3 hover:scale-[1.02] transition-all active:scale-95 overflow-hidden group/btn"
+                disabled={submitting || submitted}
+                className="w-full py-6 rounded-full luxury-gradient text-primary-foreground font-bold tracking-widest uppercase text-sm shadow-xl flex items-center justify-center gap-3 hover:scale-[1.02] transition-all active:scale-95 overflow-hidden group/btn disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {submitted ? (
+                {submitting ? (
+                  <span className="flex items-center gap-2">Sending...</span>
+                ) : submitted ? (
                   <span className="flex items-center gap-2">Sent Successfully</span>
+                ) : error ? (
+                  <span className="flex items-center gap-2 text-red-200">Delivery Failed - Try Again</span>
                 ) : (
                   <>
                     <span className="relative z-10">Send Message</span>

@@ -4,33 +4,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Luxury Haircare Brand - Dark Green, Gold, Beige */
-  --background: 165 50% 12%; /* #0f2e23 */
-  --foreground: 45 40% 90%; /* Soft Beige variant */
-  --card: 165 50% 15%;
-  --card-foreground: 45 40% 90%;
-  --popover: 165 50% 12%;
-  --popover-foreground: 45 40% 90%;
-  --primary: 45 50% 55%; /* Gold #c8a951 */
-  --primary-foreground: 165 50% 12%;
-  --secondary: 40 40% 88%; /* Beige #f5e6c8 */
+  /* Luxury Haircare Brand - Cream, Gold, Dark Green */
+  --background: 42 65% 95%;
+  /* Richer, creamier off-white */
+  --foreground: 165 50% 12%;
+  /* Dark green */
+  --card: 42 45% 98%;
+  /* Soft cream for cards (not pure white) */
+  --card-foreground: 165 50% 12%;
+  --popover: 42 45% 98%;
+  --popover-foreground: 165 50% 12%;
+  --primary: 45 60% 45%;
+  /* Darker Gold for contrast */
+  --primary-foreground: 42 65% 95%;
+  --secondary: 40 55% 88%;
+  /* Deeper, richer cream for secondary elements */
   --secondary-foreground: 165 50% 12%;
-  --muted: 165 30% 25%;
-  --muted-foreground: 45 20% 70%;
-  --accent: 45 50% 55%;
-  --accent-foreground: 165 50% 12%;
+  --muted: 40 55% 88%;
+  --muted-foreground: 165 20% 40%;
+  --accent: 45 60% 45%;
+  --accent-foreground: 42 65% 95%;
   --destructive: 0 84% 60%;
-  --destructive-foreground: 45 40% 98%;
-  --border: 45 20% 30%;
-  --input: 165 50% 15%;
-  --ring: 45 50% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 40 30% 80%;
+  /* Slightly more pronounced borders */
+  --input: 40 55% 88%;
+  --ring: 45 60% 45%;
   --radius: 0.75rem;
 }
 
 @theme inline {
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
-  
+
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
@@ -50,7 +56,7 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -61,10 +67,44 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    background-color: hsl(var(--background));
+  }
+
   body {
-    @apply bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground;
-    background-image: radial-gradient(circle at 50% 50%, rgba(200, 169, 81, 0.05) 0%, transparent 100%);
-    background-attachment: fixed;
+    @apply text-foreground selection:bg-primary/30 selection:text-primary-foreground;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  body::before {
+    background: rgba(200, 169, 81, 0.3);
+    /* Warm Gold */
+    top: -20vh;
+    left: -20vw;
+    animation: drift-warm-left 18s ease-in-out infinite alternate;
+  }
+
+  body::after {
+    background: rgba(230, 150, 70, 0.25);
+    /* Warmer Peach/Orange */
+    bottom: -20vh;
+    right: -20vw;
+    animation: drift-warm-right 22s ease-in-out infinite alternate;
   }
 }
 
@@ -72,18 +112,16 @@
   .luxury-gradient {
     background: linear-gradient(135deg, #c8a951 0%, #ecd48a 50%, #c8a951 100%);
   }
-  
+
   .glass-effect {
-    @apply bg-background/70 backdrop-blur-xl border-white/10;
+    @apply bg-white/60 backdrop-blur-xl border-black/5 shadow-sm;
   }
-  
+
   .shimmer {
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.2) 50%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%);
     background-size: 200% 100%;
     animation: shimmer 2.5s infinite linear;
   }
@@ -102,18 +140,65 @@
 }
 
 @keyframes shimmer {
-  from { background-position: -200% 0; }
-  to { background-position: 200% 0; }
+  from {
+    background-position: -200% 0;
+  }
+
+  to {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes reveal-down {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes reveal-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift-warm-left {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(15vw, 15vh) scale(1.2);
+  }
+
+  100% {
+    transform: translate(5vw, 25vh) scale(0.9);
+  }
+}
+
+@keyframes drift-warm-right {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-20vw, -10vh) scale(1.15);
+  }
+
+  100% {
+    transform: translate(-10vw, -25vh) scale(0.95);
+  }
 }
 
 .bg-texture {

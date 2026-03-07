@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import ProductShowcase from '@/components/ProductShowcase';
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ export default function ProductsPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.08 }}
                         className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-8"
                     >
                         The <span className="text-primary italic">Collection</span>

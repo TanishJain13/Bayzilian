@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Contact from '@/components/Contact';
 import { motion } from 'framer-motion';
@@ -20,7 +20,7 @@ export default function ContactPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.08 }}
                         className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-8"
                     >
                         Connect with <span className="text-primary italic">Us</span>
@@ -31,7 +31,7 @@ export default function ContactPage() {
             <Contact />
 
             {/* Map Placeholder */}
-            <section className="py-20 px-4">
+            <section id="directions" className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className="aspect-[21/9] rounded-[3rem] overflow-hidden border border-primary/10 shadow-2xl relative">
                         <div className="absolute inset-0 bg-primary/5 flex flex-col items-center justify-center text-center p-8">

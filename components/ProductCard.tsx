@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import { Eye, Star } from 'lucide-react';
@@ -18,7 +18,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.8 }}
+      transition={{ delay: index * 0.1, duration: 0.62 }}
       viewport={{ once: true }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -45,7 +45,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
             src={product.image}
             alt={product.name}
             animate={{ scale: isHovered ? 1.1 : 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.62 }}
             className="w-full h-full object-cover"
           />
 

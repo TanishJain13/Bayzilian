@@ -1,8 +1,9 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import About from '@/components/About';
 import { Sparkles, ShieldCheck, Zap, HeartPulse, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutPage() {
     const details = [
@@ -46,7 +47,7 @@ export default function AboutPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.08 }}
                         className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-8"
                     >
                         Our <span className="text-primary italic">DNA</span>
@@ -54,7 +55,7 @@ export default function AboutPage() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
+                        transition={{ delay: 0.16 }}
                         className="text-xl text-foreground/50 font-light leading-relaxed max-w-2xl mx-auto"
                     >
                         Bayzilian Professional represents the pinnacle of salon innovation. We bridge the gap between medical-grade science and luxury haircare.
@@ -96,12 +97,14 @@ export default function AboutPage() {
                     <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-8">
                         Experience the <br /> <span className="text-primary italic">Future of Haircare</span>
                     </h2>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="px-12 py-5 rounded-full luxury-gradient text-primary-foreground font-bold tracking-widest uppercase text-sm"
-                    >
-                        Locate a Bayzilian Salon
-                    </motion.button>
+                    <a href="https://www.instagram.com/bayzilianprofessionalofficial/" target="_blank" rel="noopener noreferrer">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            className="px-12 py-5 rounded-full luxury-gradient text-primary-foreground font-bold tracking-widest uppercase text-sm"
+                        >
+                            Explore Our World on Instagram
+                        </motion.button>
+                    </a>
                 </div>
             </section>
         </main>

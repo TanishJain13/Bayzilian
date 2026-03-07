@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ export default function ProductShowcase({ limit }: { limit?: number }) {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.62 }}
             viewport={{ once: true }}
             className="max-w-2xl"
           >
@@ -38,13 +38,13 @@ export default function ProductShowcase({ limit }: { limit?: number }) {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.62 }}
             viewport={{ once: true }}
-            className="hidden md:block"
+            className="mt-6 md:mt-0"
           >
-            <button className="px-10 py-5 rounded-full border border-primary/20 text-primary font-bold hover:luxury-gradient hover:text-primary-foreground transition-all duration-500 hover:scale-105">
+            <a href="/catalog.pdf" download className="inline-block px-10 py-5 rounded-full border border-primary/20 text-primary font-bold hover:luxury-gradient hover:text-primary-foreground transition-all duration-500 hover:scale-105">
               Download Catalog
-            </button>
+            </a>
           </motion.div>
         </div>
 

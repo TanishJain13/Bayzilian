@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
@@ -7,15 +7,15 @@ import { ChevronLeft, ChevronRight, GripVertical } from 'lucide-react';
 const transformations = [
   {
     id: 1,
-    before: '/before-1.jpg',
-    after: '/after-1.jpg',
+    before: '/before.png',
+    after: '/after.png',
     title: 'Nanoplastia Smoothing',
     description: '100% straight results with mirror-like shine and zero frizz.'
   },
   {
     id: 2,
-    before: '/before-2.jpg',
-    after: '/after-2.jpg',
+    before: '/before.png',
+    after: '/after.png',
     title: 'Argan Restoration',
     description: 'Deep repair for chemically treated hair, restoring elasticity.'
   }
@@ -47,7 +47,7 @@ export default function BeforeAfter() {
             <span className="text-primary font-medium tracking-[0.3em] uppercase text-xs">Visual Proof</span>
             <div className="h-[1px] w-8 bg-primary"></div>
           </motion.div>
-          <h2 className="text-5xl lg:text-7xl font-serif font-bold text-foreground mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-foreground mb-6">
             Real <span className="text-primary italic">Transformations</span>
           </h2>
         </div>
@@ -61,7 +61,7 @@ export default function BeforeAfter() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 30 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.39 }}
               >
                 <h3 className="text-4xl font-serif font-bold text-foreground mb-6 italic">
                   {transformations[currentIndex].title}
@@ -84,10 +84,10 @@ export default function BeforeAfter() {
           </div>
 
           {/* Slider Side */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 flex justify-center">
             <div
               ref={containerRef}
-              className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden cursor-ew-resize border border-primary/10 shadow-2xl"
+              className="relative aspect-[9/16] max-h-[80vh] w-full sm:w-2/3 lg:w-3/4 rounded-[2.5rem] overflow-hidden cursor-ew-resize border border-primary/10 shadow-2xl"
               onMouseMove={handleMove}
               onTouchMove={handleMove}
             >

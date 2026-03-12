@@ -1,4 +1,4 @@
-﻿export interface Product {
+export interface Product {
     id: number;
     slug: string;
     name: string;
@@ -50,7 +50,7 @@ export const products: Product[] = [
         slug: 'serum-illuminator',
         name: 'Serum Illuminator',
         volume: '200ml',
-        price: '1,999',
+        price: '1,099',
         image: '/Serum.png',
         badge: 'Protector',
         features: [
@@ -146,5 +146,22 @@ export const products: Product[] = [
             'Professional Use Only'
         ],
         description: 'A high-performance clarifying shampoo designed to prepare the hair for professional treatments. It effectively removes product build-up and minerals, ensuring maximum treatment absorption.',
+    },
+    {
+        id: 9,
+        slug: 'permanent-spa',
+        name: 'Permanent Spa',
+        volume: '500ml',
+        price: '2,099',
+        image: '/Permanent Spa.png',
+        badge: 'Superfood',
+        features: [
+            'Deep Hydration',
+            'Thicker Appearance',
+            'Long-lasting Manageability',
+            'Damage Repair',
+            'Superfood Nourishment'
+        ],
+        description: 'Permanent Spa is a superfood for your hair designed to create the appearance of thicker, fuller hair. It infuses moisture deep into the hair shaft, reduces frizz, and enhances shine for days. The formula fortifies hair strands and is rich in essential nutrients for professional-grade hair health.',
     },
 ];

@@ -16,14 +16,14 @@
   --popover-foreground: 165 50% 12%;
   --primary: 45 60% 45%;
   /* Darker Gold for contrast */
-  --primary-foreground: 42 65% 95%;
+  --primary-foreground: 165 50% 12%;
   --secondary: 40 55% 88%;
   /* Deeper, richer cream for secondary elements */
   --secondary-foreground: 165 50% 12%;
   --muted: 40 55% 88%;
   --muted-foreground: 165 20% 40%;
   --accent: 45 60% 45%;
-  --accent-foreground: 42 65% 95%;
+  --accent-foreground: 165 50% 12%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --border: 40 30% 80%;
@@ -110,7 +110,7 @@
 
 @layer utilities {
   .luxury-gradient {
-    background: linear-gradient(135deg, #c8a951 0%, #ecd48a 50%, #c8a951 100%);
+    background: linear-gradient(135deg, #c0a045 0%, #e5cc7d 50%, #c0a045 100%);
   }
 
   .glass-effect {

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import { Instagram, Mail, ArrowUpRight } from 'lucide-react';
@@ -40,7 +40,7 @@ export default function Footer() {
             <h3 className="text-3xl font-serif font-bold text-foreground mb-8">
               Bayzilian <span className="text-primary italic">Professional</span>
             </h3>
-            <p className="text-foreground/50 text-base leading-relaxed mb-10 max-w-sm">
+            <p className="text-foreground/80 text-base leading-relaxed mb-10 max-w-sm">
               Defining the future of luxury haircare with advanced nanotechnology and uncompromising safety standards for elite salons.
             </p>
 
@@ -72,7 +72,7 @@ export default function Footer() {
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        className="group flex items-center gap-2 text-foreground/40 hover:text-foreground transition-colors duration-300 text-sm font-medium"
+                        className="group flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors duration-300 text-sm font-medium"
                       >
                         {item.label}
                         <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -87,15 +87,28 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-4 text-[10px] text-foreground/30 uppercase tracking-[0.2em] font-bold">
-            <span>Â© 2026 Bayzilian</span>
-            <span className="w-1 h-1 rounded-full bg-primary/20"></span>
-            <span>All Rights Reserved</span>
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <div className="flex items-center gap-4 text-xs text-foreground/80 uppercase tracking-[0.2em] font-bold">
+              <span>Â© 2026 Bayzilian</span>
+              <span className="w-1 h-1 rounded-full bg-primary/40"></span>
+              <span>All Rights Reserved</span>
+            </div>
+            <div className="text-xs text-foreground/80 uppercase tracking-widest font-bold">
+              Developed by{' '}
+              <a 
+                href="https://stwebworks.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:text-foreground transition-colors hover:underline"
+              >
+                S&T Web Works
+              </a>
+            </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-foreground/30 uppercase tracking-[0.2em] font-bold mr-2">Marketed By</span>
-            <span className="text-xs font-bold text-primary tracking-widest px-4 py-2 border border-primary/10 rounded-full">EVERGLOSS COSMETICS</span>
+            <span className="text-xs text-foreground/80 uppercase tracking-[0.2em] font-bold mr-2">Marketed By</span>
+            <span className="text-xs font-bold text-primary tracking-widest px-4 py-2 border border-primary/20 rounded-full">EVERGLOSS COSMETICS</span>
           </div>
         </div>
       </div>

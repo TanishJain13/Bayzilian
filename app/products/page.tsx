@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import ProductShowcase from '@/components/ProductShowcase';
 import { motion } from 'framer-motion';

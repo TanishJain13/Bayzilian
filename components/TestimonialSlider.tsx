@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -40,16 +40,16 @@ export default function TestimonialSlider() {
     }, []);
 
     return (
-        <section className="py-32 px-4 bg-texture relative overflow-hidden">
+        <section className="py-[120px] px-4 bg-rich-cream relative overflow-hidden">
             <div className="absolute inset-0 bg-primary/5 pointer-events-none"></div>
 
             <div className="max-w-5xl mx-auto relative z-10 text-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10 text-primary mb-12"
+                    className="inline-flex items-center justify-center p-6 rounded-full bg-secondary/10 text-secondary mb-12 shadow-inner"
                 >
-                    <Quote size={32} />
+                    <Quote size={40} />
                 </motion.div>
 
                 <div className="relative min-h-[400px] flex items-center justify-center">
@@ -62,21 +62,21 @@ export default function TestimonialSlider() {
                             transition={{ duration: 0.62, cubicBezier: [0.16, 1, 0.3, 1] }}
                             className="px-6 sm:px-12"
                         >
-                            <div className="flex justify-center gap-1 mb-8">
+                            <div className="flex justify-center gap-1.5 mb-8">
                                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                                    <Star key={i} size={18} className="text-primary fill-primary" />
+                                    <Star key={i} size={20} className="text-secondary fill-secondary drop-shadow-sm" />
                                 ))}
                             </div>
 
-                            <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold italic text-foreground mb-12 leading-tight">
+                            <blockquote className="text-3xl sm:text-4xl lg:text-[3.5rem] font-serif font-bold italic text-primary mb-12 leading-[1.15] text-glow">
                                 "{testimonials[currentIndex].content}"
                             </blockquote>
 
-                            <div className="space-y-2">
-                                <p className="text-xl font-bold tracking-widest text-primary uppercase">
+                            <div className="space-y-3">
+                                <p className="text-2xl font-bold tracking-[0.2em] text-secondary uppercase">
                                     {testimonials[currentIndex].name}
                                 </p>
-                                <p className="text-sm text-foreground/40 font-medium">
+                                <p className="text-sm text-foreground/50 font-medium">
                                     {testimonials[currentIndex].role}
                                 </p>
                             </div>
@@ -88,23 +88,23 @@ export default function TestimonialSlider() {
                 <div className="flex items-center justify-center gap-12 mt-16">
                     <button
                         onClick={prev}
-                        className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+                        className="w-14 h-14 rounded-full border border-secondary/30 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-500 hover:scale-[1.1] active:scale-95 shadow-sm"
                     >
                         <ChevronLeft size={24} />
                     </button>
 
-                    <div className="flex gap-3">
+                    <div className="flex gap-4">
                         {testimonials.map((_, i) => (
                             <div
                                 key={i}
-                                className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'bg-primary scale-125' : 'bg-primary/20'}`}
+                                className={`w-3 h-3 rounded-full transition-all duration-500 ${i === currentIndex ? 'bg-secondary scale-125 shadow-gold' : 'bg-secondary/20'}`}
                             />
                         ))}
                     </div>
 
                     <button
                         onClick={next}
-                        className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+                        className="w-14 h-14 rounded-full border border-secondary/30 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-500 hover:scale-[1.1] active:scale-95 shadow-sm"
                     >
                         <ChevronRight size={24} />
                     </button>

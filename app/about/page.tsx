@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import About from '@/components/About';
@@ -100,7 +100,7 @@ export default function AboutPage() {
                     <a href="https://www.instagram.com/bayzilianprofessionalofficial/" target="_blank" rel="noopener noreferrer">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
-                            className="px-12 py-5 rounded-full luxury-gradient text-primary-foreground font-bold tracking-widest uppercase text-sm"
+                            className="px-12 py-5 rounded-full btn-gold font-bold tracking-widest uppercase text-sm shadow-xl hover:shadow-secondary/20 transition-all shimmer-hover overflow-hidden relative"
                         >
                             Explore Our World on Instagram
                         </motion.button>

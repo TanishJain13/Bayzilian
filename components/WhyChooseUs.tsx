@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import { ShieldCheck, Droplets, Clock, Zap } from 'lucide-react';
@@ -28,16 +28,16 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-32 px-4 bg-background relative">
+    <section className="py-[120px] px-4 bg-base-cream relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="h-[1px] w-8 bg-primary"></div>
-            <span className="text-primary font-medium tracking-[0.3em] uppercase text-xs">Excellence Guaranteed</span>
-            <div className="h-[1px] w-8 bg-primary"></div>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-[1px] w-12 bg-secondary/30"></div>
+            <span className="text-secondary font-bold tracking-[0.4em] uppercase text-xs">Excellence Guaranteed</span>
+            <div className="h-[1px] w-12 bg-secondary/30"></div>
           </div>
-          <h2 className="text-5xl lg:text-7xl font-serif font-bold text-foreground">
-            Why <span className="text-primary italic">Professional</span> Prefer Us
+          <h2 className="text-[4rem] font-serif font-bold text-primary mb-4 leading-tight">
+            Why <span className="text-secondary italic font-light">Professionals</span> Prefer Us
           </h2>
         </div>
 
@@ -49,19 +49,18 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.47 }}
               viewport={{ once: true }}
-              className="group p-10 rounded-[2.5rem] bg-card/30 border border-primary/5 hover:border-primary/30 transition-all duration-500 text-center relative overflow-hidden"
+              className="glass-card p-10 text-center relative overflow-hidden group/feature"
             >
-              <div className="absolute inset-0 luxury-gradient opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-              <div className="text-primary mb-8 flex justify-center group-hover:scale-110 transition-transform duration-500">
+              <div className="text-secondary mb-8 flex justify-center group-hover/feature:scale-110 transition-transform duration-500">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-serif font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-serif font-bold text-primary mb-4 group-hover/feature:text-secondary transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-sm text-foreground/40 leading-relaxed font-light mb-6">
+              <p className="text-sm text-foreground/70 leading-[1.7] mb-6 font-normal">
                 {feature.description}
               </p>
-              <div className="w-10 h-[1px] bg-primary/20 group-hover:w-full transition-all duration-700 mx-auto"></div>
+              <div className="w-10 h-[2px] bg-secondary/20 group-hover/feature:w-full transition-all duration-700 mx-auto"></div>
             </motion.div>
           ))}
         </div>

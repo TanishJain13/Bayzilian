@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -12,9 +12,16 @@ export default function Navigation() {
   const { scrollY } = useScroll();
 
   const navHeight = useTransform(scrollY, [0, 100], ['5rem', '4rem']);
-  // Changing from dark green to a creamy off-white matching the theme
-  const navBg = useTransform(scrollY, [0, 100], ['rgba(245, 240, 230, 0)', 'rgba(245, 240, 230, 0.95)']);
-  const navBorder = useTransform(scrollY, [0, 100], ['rgba(200, 169, 81, 0)', 'rgba(200, 169, 81, 0.2)']);
+  // Subtle transition from transparent to a soft greyish cream on scroll
+  const navBg = useTransform(
+    scrollY,
+    [0, 100],
+    [
+      'rgba(248, 246, 241, 0)',         // transparent cream at top
+      'rgba(225, 221, 213, 0.96)',      // greyish cream when scrolled
+    ],
+  );
+  const navBorder = useTransform(scrollY, [0, 100], ['rgba(201, 162, 39, 0)', 'rgba(201, 162, 39, 0.2)']);
 
   const navLinks = [
     { label: 'Home', href: '/' },
@@ -48,11 +55,11 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-bold tracking-widest uppercase relative group overflow-hidden transition-all duration-300 ${pathname === link.href ? 'text-primary' : 'text-foreground/60 hover:text-foreground'
+                className={`text-sm font-bold tracking-widest uppercase relative group overflow-hidden transition-all duration-300 ${pathname === link.href ? 'text-primary' : 'text-foreground/70 hover:text-primary'
                   }`}
               >
                 <span className="relative z-10">{link.label}</span>
-                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-primary transform transition-transform duration-300 origin-left ${pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-secondary transform transition-transform duration-300 origin-left ${pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   }`}></span>
               </Link>
             ))}
@@ -75,14 +82,14 @@ export default function Navigation() {
         <motion.div
           initial={false}
           animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-          className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl rounded-2xl mt-2 border border-primary/20"
+          className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl rounded-[24px] mt-2 border border-secondary/20 shadow-xl"
         >
           <div className="py-6 px-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`flex items-center justify-between py-3 px-4 rounded-xl transition-all font-serif italic text-lg ${pathname === link.href ? 'text-primary bg-primary/10 font-bold' : 'text-foreground/70 hover:text-foreground hover:bg-primary/5'
+                className={`flex items-center justify-between py-3 px-4 rounded-xl transition-all font-serif italic text-lg ${pathname === link.href ? 'text-primary bg-secondary/10 font-bold' : 'text-foreground/70 hover:text-primary hover:bg-secondary/5'
                   }`}
                 onClick={() => setIsOpen(false)}
               >

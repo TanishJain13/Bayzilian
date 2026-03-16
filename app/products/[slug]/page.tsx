@@ -5,11 +5,21 @@ import { motion } from 'framer-motion';
 import { ChevronRight, ArrowLeft, ShieldCheck, Sparkles, Droplets, FlaskConical } from 'lucide-react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
+import { useMemo } from 'react';
 
 export default function ProductDetailPage() {
     const { slug } = useParams();
     const router = useRouter();
     const product = products.find(p => p.slug === slug);
+    const priceAndVolumes = useMemo(() => {
+        if (!product) return [];
+        const prices = product.price.split(' / ');
+        const volumes = product.volume.split(' / ');
+        return prices.map((price, idx) => ({
+            price,
+            volume: volumes[idx] || product.volume,
+        }));
+    }, [product]);
 
     if (!product) {
         return (
@@ -91,26 +101,33 @@ export default function ProductDetailPage() {
                             ))}
                         </div>
 
-                        <div className="pt-10 border-t border-primary/10 flex flex-col sm:flex-row items-center justify-between gap-8">
-                            <div className="space-y-2">
-                                <p className="text-[10px] uppercase tracking-widest text-primary/40 mb-1">Suggested Salon Price</p>
-                                {product.price.split(' / ').map((price, idx) => {
-                                    const volumes = product.volume.split(' / ');
-                                    const vol = volumes[idx] || product.volume;
-                                    return (
-                                        <div key={idx} className="flex items-baseline gap-3">
-                                            <span className="text-xl text-foreground/50 font-medium">{vol}:</span>
-                                            <p className="text-4xl font-serif font-bold italic text-foreground">₹{price}</p>
+                        <div className="pt-10 border-t border-primary/10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-4">
+                                <p className="text-[10px] uppercase tracking-widest text-primary/40">Suggested Salon Price</p>
+                                <div className="space-y-4">
+                                    {priceAndVolumes.map(({ price, volume }, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="flex flex-wrap items-baseline gap-3 rounded-2xl bg-card/40 border border-primary/5 px-5 py-4"
+                                        >
+                                            <span className="text-base sm:text-lg md:text-xl text-foreground/60 font-medium uppercase">
+                                                {volume}
+                                            </span>
+                                            <p className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold italic text-foreground leading-none">
+                                                ₹{price}
+                                            </p>
                                         </div>
-                                    );
-                                })}
+                                    ))}
+                                </div>
                             </div>
 
-                            <Link href="/contact" className="w-full sm:w-auto">
-                                <button className="w-full px-12 py-5 rounded-full luxury-gradient text-primary-foreground font-bold tracking-widest uppercase text-sm shadow-2xl hover:scale-105 transition-all">
-                                    Contact Us
-                                </button>
-                            </Link>
+                            <div className="flex items-center justify-center">
+                                <Link href="/contact" className="w-full">
+                                    <button className="w-full px-8 sm:px-12 py-4 sm:py-5 rounded-full btn-gold font-bold tracking-widest uppercase text-xs sm:text-sm shadow-2xl hover:scale-105 transition-all">
+                                        Contact Us
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

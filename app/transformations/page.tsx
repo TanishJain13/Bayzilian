@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import BeforeAfter from '@/components/BeforeAfter';
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ export default function TransformationsPage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.08 }}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-serif font-bold text-foreground mb-8"
+                        className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-serif font-bold text-foreground mb-6 sm:mb-8 break-words"
                     >
                         Art of <span className="text-primary italic">Transformation</span>
                     </motion.h1>

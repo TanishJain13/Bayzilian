@@ -157,7 +157,7 @@ export const products: Product[] = [
         slug: 'permanent-spa',
         name: 'Permanent Spa',
         volume: '500gm',
-        price: '2,099',
+        price: '3,999',
         image: '/Permanent Spa.png',
         badge: 'Superfood',
         features: [
@@ -171,20 +171,20 @@ export const products: Product[] = [
     },
     {
         id: 10,
-        slug: 'hair-serum',
-        name: 'Bayzilian Hair Serum',
-        volume: '100ml',
-        price: '1,099',
-        image: '/Serum.png',
-        badge: 'Essential',
+        slug: 'serum-illuminator',
+        name: 'Bayzilian Serum Illuminator',
+        volume: '200ml',
+        price: '1,999',
+        image: '/illuminator.jpg',
+        badge: 'Protector',
         features: [
-            'Heat Protection Barrier',
-            'Locks in Moisture',
-            'Reduces Frizz',
-            'Smooths Hair Cuticle',
-            'Shinier & Softer Hair',
-            'Suitable for All Hair Types'
+            'Immediate Chemical Damage Reversal',
+            'Treatment + Heat Protector + pH Balancer',
+            'Restores Vitality & Elasticity',
+            'Anti-Porosity (Seals the cuticle)',
+            'Anti-Breakage (Strengthens the structure)',
+            'Anti-Frizz + Illuminating Finish'
         ],
-        description: 'Bayzilian Hair Serum is designed to smooth the hair cuticle and protect hair from heat styling tools. It creates a heat protection barrier, locks in moisture, and helps reduce frizz while leaving the hair shinier and softer.',
+        description: 'A highly concentrated, multifunctional serum often marketed as a "chemical reverser" to provide immediate relief and recovery for hair damaged by coloring, bleaching, and straightening. It works as a treatment, a heat protector, and a pH balancer—helping restore the hair’s natural vitality and elasticity while sealing the cuticle (anti-porosity), strengthening the structure (anti-breakage), and smoothing the surface (anti-frizz). Delivers a premium illuminating finish with intense shine, softness, and smoothness without weighing the hair down.',
     }
 ];

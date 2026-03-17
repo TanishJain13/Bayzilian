@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import About from '@/components/About';
 import { Sparkles, ShieldCheck, Zap, HeartPulse, Clock } from 'lucide-react';
-import Link from 'next/link';
 
 export default function AboutPage() {
     const details = [
@@ -48,17 +47,17 @@ export default function AboutPage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.08 }}
-                        className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-8"
+                        className="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-foreground mb-8 text-balance"
                     >
-                        Our <span className="text-primary italic">DNA</span>
+                        About <span className="text-primary italic">Bayzilian</span> Professional
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.16 }}
-                        className="text-xl text-foreground/50 font-light leading-relaxed max-w-2xl mx-auto"
+                        className="text-base sm:text-lg md:text-xl text-foreground/60 font-light leading-relaxed max-w-3xl mx-auto"
                     >
-                        Bayzilian Professional represents the pinnacle of salon innovation. We bridge the gap between medical-grade science and luxury haircare.
+                        Welcome to Bayzilian Professional, where high-performance hair science meets the purity of nature. We are a premium hair care brand dedicated to providing salon-grade solutions that transform hair health while staying committed to ethical beauty.
                     </motion.p>
                 </div>
             </section>

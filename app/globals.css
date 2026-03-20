@@ -92,6 +92,13 @@
     font-size: 18px; /* Exact design system body size */
   }
 
+  /* Prevent long words from overflowing on small screens */
+  h1, h2, h3, h4, h5, h6, p, a, span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
   /* Global immersive background (no pure white) */
   body::before {
     content: "";

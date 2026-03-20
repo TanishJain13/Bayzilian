@@ -49,8 +49,8 @@ export default function BeforeAfter() {
             <span className="text-secondary font-medium tracking-[0.3em] uppercase text-xs">Visual Proof</span>
             <div className="h-[1px] w-8 bg-secondary"></div>
           </motion.div>
-          <h2 className="text-[4rem] font-serif font-bold text-primary mb-6">
-            Real <span className="text-secondary italic font-light">Transformations</span>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary mb-6 break-words hyphens-auto [overflow-wrap:anywhere]">
+            Real <span className="text-secondary italic font-light break-words hyphens-auto [overflow-wrap:anywhere]">Transformations</span>
           </h2>
         </div>
 

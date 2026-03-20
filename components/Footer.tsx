@@ -24,7 +24,7 @@ const links = {
 
 const socialLinks = [
   { icon: Instagram, href: 'https://www.instagram.com/bayzilianprofessionalofficial/', label: 'Instagram' },
-  { icon: Mail, href: 'mailto:info@bayzilian.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:bayzilianprofessional@gmail.com', label: 'Email' },
 ];
 
 export default function Footer() {

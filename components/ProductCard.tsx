@@ -90,7 +90,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
 
         <div className="pt-4 border-t border-secondary/10 flex items-center justify-between">
           <span className="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">
-            {product.volume} Professional
+            {product.volume} {product.availability ?? 'Professional'}
           </span>
           <Link href={`/products/${product.slug}`} className="text-xs font-bold text-secondary hover:text-primary transition-colors flex items-center gap-1 group/btn">
             View Details <div className="w-4 h-[1px] bg-secondary group-hover/btn:w-6 transition-all"></div>

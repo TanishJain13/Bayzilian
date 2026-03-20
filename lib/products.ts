@@ -8,6 +8,7 @@ export interface Product {
     badge?: string;
     features: string[];
     description: string;
+    availability?: string;
 }
 
 export const products: Product[] = [
@@ -52,10 +53,11 @@ export const products: Product[] = [
         id: 3,
         slug: 'bayzilian-serum',
         name: 'Bayzilian Hair Serum',
-        volume: '200ml',
+        volume: '100ml',
         price: '1,099',
         image: '/Serum.png',
         badge: 'Protector',
+        availability: 'Retail & Professional',
         features: [
             'Heat Protection',
             'Anti-Frizz',
@@ -74,6 +76,7 @@ export const products: Product[] = [
         price: '2,999 / 1,199',
         image: '/Shampoo.png',
         badge: 'Essential',
+        availability: 'Retail & Professional',
         features: [
             'Sulfate Free',
             'Retains Moisture',

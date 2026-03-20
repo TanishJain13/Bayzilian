@@ -7,17 +7,17 @@ import { ChevronLeft, ChevronRight, GripVertical } from 'lucide-react';
 const transformations = [
   {
     id: 1,
-    before: '/before.png',
-    after: '/after.png',
+    before: '/before1.png',
+    after: '/after1.png',
     title: 'Nanoplastia Smoothing',
     description: 'Transform before treatment frizzy hair into after treatment smooth straight hair. 100% straight results with mirror-like shine and zero frizz.'
   },
   {
     id: 2,
-    before: '/before.png',
-    after: '/after.png',
-    title: 'Argan Restoration',
-    description: 'Deep repair for chemically treated hair, restoring elasticity.'
+    before: '/before2.png',
+    after: '/after2.png',
+    title: 'Botox Treatment',
+    description: 'Frizzy, wavy black hair transformed into smooth, glossy, and visibly healthier strands with enhanced shine and manageability.'
   }
 ];
 

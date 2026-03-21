@@ -44,9 +44,6 @@ export default function Navigation() {
             className="flex items-center gap-2 group cursor-pointer"
           >
             <img src="/logo.png" alt="Bayzilian Logo" className="h-10 w-auto object-contain" />
-            <span className="text-2xl font-serif font-bold tracking-widest text-primary uppercase">
-              Bayzilian
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

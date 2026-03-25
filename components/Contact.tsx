@@ -28,12 +28,15 @@ export default function Contact() {
     setError(false);
 
     try {
-      const response = await fetch('https://formsubmit.co/bayzilianprofessional@gmail.com', {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+
+      const response = await fetch('https://formsubmit.co/el/dihehe', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+        body: formDataToSend
       });
 
       if (response.ok) {
@@ -44,6 +47,7 @@ export default function Contact() {
         setError(true);
       }
     } catch (err) {
+      console.error('Form submission error:', err);
       setError(true);
     } finally {
       setSubmitting(false);
@@ -168,21 +172,21 @@ export default function Contact() {
                 disabled={submitting || submitted}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-5 rounded-full btn-gold font-bold tracking-widest uppercase text-sm shadow-xl hover:shadow-secondary/30 transition-all shimmer-hover overflow-hidden relative disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group w-full py-5 rounded-full btn-gold font-bold tracking-widest uppercase text-sm shadow-xl hover:shadow-secondary/30 transition-all shimmer-hover overflow-hidden relative disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {submitting ? (
-                  <span className="flex items-center gap-2">Sending...</span>
+                  <span className="flex items-center justify-center gap-2">Sending...</span>
                 ) : submitted ? (
-                  <span className="flex items-center gap-2">Sent Successfully</span>
+                  <span className="flex items-center justify-center gap-2">Sent Successfully</span>
                 ) : error ? (
-                  <span className="flex items-center gap-2 text-red-200">Delivery Failed - Try Again</span>
+                  <span className="flex items-center justify-center gap-2 text-red-200">Delivery Failed - Try Again</span>
                 ) : (
-                  <>
-                    <span className="relative z-10">Send Message</span>
-                    <Send size={18} className="relative z-10 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                  </>
+                  <span className="flex items-center justify-center gap-2 relative z-10">
+                    <span>Send Message</span>
+                    <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </span>
                 )}
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </motion.button>
             </form>
           </motion.div>

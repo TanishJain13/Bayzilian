@@ -21,12 +21,12 @@ export async function POST(request: Request) {
     const data = await response.json();
     console.log('FormSubmit Response:', data);
 
-    if (response.ok) {
+    if (response.ok && (data.success === 'true' || data.success === true)) {
       return NextResponse.json({ success: true, message: data.message || 'Form submitted successfully' });
     } else {
       return NextResponse.json(
         { success: false, error: data.message || 'Error submitting form' },
-        { status: response.status }
+        { status: response.ok ? 400 : response.status }
       );
     }
   } catch (error) {

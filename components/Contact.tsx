@@ -28,7 +28,7 @@ export default function Contact() {
     setError(false);
 
     try {
-      const response = await fetch('https://formspree.io/f/xvggebrp', {
+      const response = await fetch('https://formsubmit.co/bayzilianprofessional@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ export default function Contact() {
           <div className="lg:col-span-4 space-y-12">
             {[
               { icon: Phone, label: 'Main Registry', value: '+91 7506068946', value2: '+91 7709597120', value3: '+91 9653184921', sub: 'Technical Support' },
-              { icon: Mail, label: 'Email Correspondence', value: 'info@evergloss.biz', sub: 'General Enquiries' },
+              { icon: Mail, label: 'Email Correspondence', value: 'bayzilianprofessional@gmail.com', sub: 'General Enquiries' },
               { icon: MapPin, label: 'Headquarters', value: 'Evergloss Cosmetics', sub: 'Mumbai, India' }
             ].map((info, idx) => (
               <motion.div

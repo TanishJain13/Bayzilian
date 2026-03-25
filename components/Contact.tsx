@@ -55,24 +55,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-[120px] bg-rich-cream relative">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="h-[1px] w-8 bg-secondary"></div>
-            <span className="text-secondary font-medium tracking-[0.3em] uppercase text-xs">Get in Touch</span>
-            <div className="h-[1px] w-8 bg-secondary"></div>
-          </div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-[4rem] font-serif font-bold text-primary mb-4"
-          >
-            Connect <span className="text-secondary italic font-light">With Us</span>
-          </motion.h2>
-          <p className="text-xl text-foreground/50 font-light max-w-2xl mx-auto">
-            Whether you're a boutique salon owner or a large salon chain, our team is ready to assist your journey to excellence.
-          </p>
-        </div>
+
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Contact Info */}

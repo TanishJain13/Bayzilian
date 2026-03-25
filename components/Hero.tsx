@@ -59,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.16, duration: 0.62 }}
-            className="text-4xl sm:text-5xl lg:text-[5.5rem] font-serif font-bold leading-[1.1] mb-6 sm:mb-8 text-white text-glow break-words"
+            className="text-4xl sm:text-5xl lg:text-[5.5rem] font-serif font-bold leading-[1.1] mb-6 sm:mb-8 text-white text-glow"
           >
             Sculpted <br />
             <span className="text-secondary italic font-light">Perfection</span>

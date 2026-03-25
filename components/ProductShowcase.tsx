@@ -27,7 +27,7 @@ export default function ProductShowcase({ limit }: { limit?: number }) {
               <span className="text-secondary font-bold tracking-[0.4em] uppercase text-xs">The Salon Collection</span>
               <div className="h-[1px] w-8 bg-secondary/50"></div>
             </div>
-            <h2 className="text-[4rem] font-serif font-bold text-primary mb-8 leading-tight text-glow">
+            <h2 className="text-4xl md:text-[4rem] font-serif font-bold text-primary mb-8 leading-tight text-glow">
               Professional <br />
               <span className="text-secondary italic font-light">Hair Systems</span>
             </h2>

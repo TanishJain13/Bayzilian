@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
             <span className="text-secondary font-bold tracking-[0.4em] uppercase text-xs">Excellence Guaranteed</span>
             <div className="h-[1px] w-12 bg-secondary/30"></div>
           </div>
-          <h2 className="text-[4rem] font-serif font-bold text-primary mb-4 leading-tight">
+          <h2 className="text-4xl md:text-[4rem] font-serif font-bold text-primary mb-4 leading-tight">
             Why <span className="text-secondary italic font-light">Professionals</span> Prefer Us
           </h2>
         </div>

@@ -28,16 +28,22 @@ export default function Contact() {
     setError(false);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formsubmit.co/ajax/bayzilianprofessional@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          _captcha: 'false',
+          _subject: formData.subject || 'New Contact Form Submission',
+        })
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && (data.success === 'true' || data.success === true)) {
         setSubmitted(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setSubmitted(false), 5000);

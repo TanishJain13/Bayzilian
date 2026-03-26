@@ -13,8 +13,9 @@ export async function POST(request: Request) {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Referer': referer || 'https://bayzilian.vercel.app',
-        'Origin': origin || 'https://bayzilian.vercel.app'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Referer': referer || 'https://www.bayzilian.com',
+        'Origin': origin || 'https://www.bayzilian.com'
       },
       body: JSON.stringify({
         ...formData,
@@ -22,12 +23,19 @@ export async function POST(request: Request) {
       })
     });
 
-    const data = await response.json();
-    console.log('FormSubmit Production Response:', {
-      status: response.status,
-      ok: response.ok,
-      data
-    });
+    const responseText = await response.text();
+    console.log('FormSubmit Raw Response:', responseText);
+
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch (e) {
+      console.error('Failed to parse FormSubmit response as JSON. Raw text:', responseText);
+      return NextResponse.json(
+        { success: false, error: 'FormSubmit returned an invalid response.' },
+        { status: 502 }
+      );
+    }
 
     if (response.ok && (data.success === 'true' || data.success === true)) {
       return NextResponse.json({ success: true, message: data.message || 'Form submitted successfully' });

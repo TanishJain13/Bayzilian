@@ -4,13 +4,16 @@ export async function POST(request: Request) {
   try {
     const formData = await request.json();
 
-    const response = await fetch('https://formsubmit.co/ajax/stwebworks@gmail.com', {
+    const origin = request.headers.get('origin') || '';
+    const referer = request.headers.get('referer') || '';
+
+    const response = await fetch('https://formsubmit.co/ajax/bayzilianprofessional@gmail.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Referer': 'http://localhost:3000',
-        'Origin': 'http://localhost:3000'
+        'Referer': referer,
+        'Origin': origin
       },
       body: JSON.stringify({
         ...formData,

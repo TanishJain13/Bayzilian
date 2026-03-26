@@ -4,7 +4,7 @@ export async function POST(request: Request) {
   try {
     const formData = await request.json();
 
-    const response = await fetch('https://formsubmit.co/ajax/bayzilianprofessional@gmail.com', {
+    const response = await fetch('https://formsubmit.co/ajax/stwebworks@gmail.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
